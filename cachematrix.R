@@ -2,7 +2,8 @@
 ## If inverse of matrix has been calculated, function cacheSolve will just get
 ## the matrix from previous results.
 
-## This function creates a special ‚Äúmatrix‚Äù object that can cache its inverse.
+## This function creates a special ?Äúmatrix?Ä? object that can cache its inverse.
+## x means original matrix, ivsM means inverse of the original matrix
 makeCacheMatrix <- function(x = matrix()) {  
  
   # initialize
@@ -25,10 +26,11 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set=set,get=get,set_ivsM=set_ivsM,get_ivsM=get_ivsM)
 }
 
-## This function computes the inverse of the special ‚Äúmatrix‚Äù returned
+## This function computes the inverse of the special ?Äúmatrix?Ä? returned
 ## by makeCacheMatrix above.
 ## If the inverse has already been calculated(and the matrix has not changed),
 ## then cacheSolve will retrieve the inverse from the cache.
+## [WARNING: x means func.object, not a matrix itself(unlike func. makeCacheMatrix)]
 cacheSolve <- function(x, ...) {
   
   # load inversed matrix from cache
